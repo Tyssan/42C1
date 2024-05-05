@@ -17,14 +17,17 @@
 int	main(void)
 {
 	int		fd;
-	char	*singleLine = malloc(1 * sizeof(char));
+	char	*line;
 
 	fd = open("test.txt", O_RDONLY);
-	while(singleLine != NULL)
+	while (1)
 	{
-		free(singleLine);
-		singleLine = get_next_line(fd);
-		printf("%s", singleLine);
+		line = get_next_line(fd);
+		printf("%s", line);
+		if (line == NULL)
+			break ;
+		free(line);
 	}
+	printf("\n\nFINISHED\n");
 	return (0);
 }

@@ -41,9 +41,9 @@ void	read_and_stash(int fd, t_list **stash)
 	ssize_t	readed;
 
 	readed = 1;
-	while (found_new_line(*stash) == 1 || readed != 0)
+	while (found_new_line(*stash) == 0 && readed != 0)
 	{
-		buf = malloc(sizeof(char) + (BUFFER_SIZE + 1));
+		buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 		if (buf == NULL)
 			return ;
 		readed = read(fd, buf, BUFFER_SIZE);
@@ -98,7 +98,7 @@ void	extract_line(t_list *stash, char **line)
 	if (*line == NULL)
 		return ;
 	j = 0;
-	while (stash != NULL)
+	while (stash)
 	{
 		i = 0;
 		while (stash->content[i])

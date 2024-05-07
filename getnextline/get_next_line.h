@@ -20,7 +20,7 @@
 #  define BUFFER_SIZE 8
 # endif
 
-typedef struct	s_list
+typedef struct s_list
 {
 	char			*content;
 	struct s_list	*next;
@@ -36,4 +36,5 @@ t_list	*get_last_node(t_list *stash);
 void	generate_line(char **line, t_list *stash);
 void	free_stash(t_list *stash);
 size_t	ftstrlen(char *str);
+
 #endif

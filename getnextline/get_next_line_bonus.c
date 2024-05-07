@@ -136,7 +136,7 @@ void	clean_stash(t_list **stash)
 	if (clean->content == NULL)
 		return ;
 	j = 0;
-	while (last->content[j] != '\0')
+	while (last->content[i] != '\0')
 		clean->content[j++] = last->content[i++];
 	clean->content[j] = '\0';
 	free_stash(*stash);

@@ -44,11 +44,12 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c | $(OBJ_PATH)
 $(OBJ_PATH) :
 	mkdir -p $(OBJ_PATH)
 
-fclean : clean
-	rm -rf $(NAME)
 clean :
 	rm -rf $(OBJ_PATH)
 
+fclean : clean
+	rm -rf $(NAME)
+
 re : fclean all
 
-.PHONY : all bonus fclean clean re
+.PHONY : all bonus clean fclean re

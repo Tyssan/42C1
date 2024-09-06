@@ -1,1 +1,26 @@
 1765cddca56dc5d364b8e7dd05456c6b76762342
+
+/* commandes a faire: */
+sudo /usr/local/bin/monitoring.sh /* afficher le monitoring */
+sudo ufw status
+sudo systemctl status ssh
+getent group sudo
+getent group user42
+sudo adduser new username
+sudo groupadd groupname
+sudo usermod -aG groupname username
+sudo chage -l username /* check password expire rules */
+
+hostnamectl
+hostnamectl set-hostname new_hostname /* to change the current hostname */
+/* Restart your Virtual Machine. */
+sudo nano /etc/hosts /* change current hostname to new hostname */
+
+lsblk /* display the partitions */
+dpkg -l | grep sudo /* to show that sudo is installed */
+sudo ufw status numbered
+sudo ufw allow port-id
+sudo ufw delete rule number
+
+/* se connecter via le terminal (pour montrer que la connexion via SSH fonctionne): */
+ssh tbrunier@127.0.0.1 -p 4242
